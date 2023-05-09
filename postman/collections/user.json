@@ -1,0 +1,52 @@
+{
+	"info": {
+		"_postman_id": "9fbef76b-f02f-4a30-b043-3f2a5067ba56",
+		"name": "user",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "7701706-9fbef76b-f02f-4a30-b043-3f2a5067ba56"
+	},
+	"item": [
+		{
+			"name": "profile",
+			"item": [
+				{
+					"name": "update",
+					"id": "53ec3038-e0cd-4739-bf51-bbc44d50f9aa",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"John\",\r\n    \"middleName\":\"Doe\",\r\n    \"lastName\":\"Doe\",\r\n    \"avatar\":\"\",\r\n    \"email\":\"\"\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/she/api/v1/user/profile/update/{userId}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"she",
+								"api",
+								"v1",
+								"user",
+								"profile",
+								"update",
+								"{userId}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "2c8754e1-0bdd-4aa3-a6cd-21acdd3e159e"
+		}
+	]
+}
