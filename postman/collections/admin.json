@@ -1,0 +1,1305 @@
+{
+	"info": {
+		"_postman_id": "72dd7b48-bd08-420b-8519-62bfbd21b0f0",
+		"name": "admin",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "7701706-72dd7b48-bd08-420b-8519-62bfbd21b0f0"
+	},
+	"item": [
+		{
+			"name": "loan",
+			"item": [
+				{
+					"name": "all",
+					"id": "07812868-c0d4-4345-a408-f6dfad1cb398",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{liveUrl}}/she/api/v1/loan/all",
+							"host": [
+								"{{liveUrl}}"
+							],
+							"path": [
+								"she",
+								"api",
+								"v1",
+								"loan",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "active",
+					"id": "18e55ea4-be42-47f7-b225-d887e7a4288a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/she/api/v1/loan/active",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"she",
+								"api",
+								"v1",
+								"loan",
+								"active"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pending",
+					"id": "bca9a9be-ab06-48ed-b591-af599295982d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/she/api/v1/loan/pending",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"she",
+								"api",
+								"v1",
+								"loan",
+								"pending"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "approveLoan",
+					"id": "d4b1ddc5-0c3d-4b0c-831d-dd9631f01af8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/she/api/v1/loan/approve/:loanId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"she",
+								"api",
+								"v1",
+								"loan",
+								"approve",
+								":loanId"
+							],
+							"variable": [
+								{
+									"key": "loanId",
+									"value": "{{loanId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "disburseLoan",
+					"id": "e8d06975-c6be-47f8-b7cd-ceb79edabdca",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{liveUrl}}/she/api/v1/disbursement/disburse/:loanId",
+							"host": [
+								"{{liveUrl}}"
+							],
+							"path": [
+								"she",
+								"api",
+								"v1",
+								"disbursement",
+								"disburse",
+								":loanId"
+							],
+							"variable": [
+								{
+									"key": "loanId",
+									"value": "{{loanId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "disbursedLoans",
+					"id": "26692b89-c614-415b-9f6e-6277a68c2b28",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/she/api/v1/loan/disbursed",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"she",
+								"api",
+								"v1",
+								"loan",
+								"disbursed"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "approvedLoans",
+					"id": "70debaeb-3743-4ebb-994c-a31ce84ebbec",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/she/api/v1/loan/approved",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"she",
+								"api",
+								"v1",
+								"loan",
+								"approved"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "49289e75-18fb-40e4-8799-31c9da5b7c8b"
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "createLoanOfficer",
+					"id": "00ffa652-728e-47ff-bf86-27ac638c3d45",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \"username\": \"John Done\",\r\n     \"email\": \"danvanmandela@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/she/api/v1/admin/create/officer/loan",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"she",
+								"api",
+								"v1",
+								"admin",
+								"create",
+								"officer",
+								"loan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "adminUsers",
+					"id": "685a7651-0480-4c18-8d88-e86b2206a875",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}}/she/api/v1/admin/users/admin",
+							"host": [
+								"{{baseUrl}}}"
+							],
+							"path": [
+								"she",
+								"api",
+								"v1",
+								"admin",
+								"users",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createAdmin",
+					"id": "989e09cf-1a70-4587-beca-1ae45792e55f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"danvantroy@gmail.com\",\r\n    \"username\":\"Danvan Mandela\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/she/api/v1/admin/create/admin",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"she",
+								"api",
+								"v1",
+								"admin",
+								"create",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createLoanOfficer",
+					"id": "7e992b98-4f22-4c4d-abb3-d143107dca4f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"danvantroy@gmail.com\",\r\n    \"username\":\"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{liveUrl}}/she/api/v1/admin/create/loan/officer",
+							"host": [
+								"{{liveUrl}}"
+							],
+							"path": [
+								"she",
+								"api",
+								"v1",
+								"admin",
+								"create",
+								"loan",
+								"officer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createSeedAdmin",
+					"id": "9e848e23-0a41-4473-bd2b-8eea7940c513",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"danvantroy@gmail.com\",\r\n    \"username\":\"Yo Adde\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/she/api/v1/admin/create/seed/admin",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"she",
+								"api",
+								"v1",
+								"admin",
+								"create",
+								"seed",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createSeedOfficer",
+					"id": "cf3da0ac-cd4c-4d73-a189-be44c0e8e452",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/she/api/v1/admin/create/seed/officer",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"she",
+								"api",
+								"v1",
+								"admin",
+								"create",
+								"seed",
+								"officer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "activateAccount",
+					"id": "577a4ec5-7fba-4af2-8e64-334175aa1495",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/she/api/v1/admin/account/enable/:userId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"she",
+								"api",
+								"v1",
+								"admin",
+								"account",
+								"enable",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "disableAccount",
+					"id": "6b3c26c1-b900-4b3c-9840-9ac89ba12b0c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/she/api/v1/admin/account/enable/:userId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"she",
+								"api",
+								"v1",
+								"admin",
+								"account",
+								"enable",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forgotPassword",
+					"id": "b2e7fd14-eaac-4cc9-bf1a-67bc04f913c5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/she/api/v1/admin/auth/password/forgot/:email",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"she",
+								"api",
+								"v1",
+								"admin",
+								"auth",
+								"password",
+								"forgot",
+								":email"
+							],
+							"variable": [
+								{
+									"key": "email",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "changePassword",
+					"id": "2d80baf5-7f35-4da6-ad77-eb628f9fd778",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"newPass\":\"\",\r\n    \"oldPass\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/she/api/v1/admin/auth/password/forgot/:userId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"she",
+								"api",
+								"v1",
+								"admin",
+								"auth",
+								"password",
+								"forgot",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"id": "938ae740-49f0-4ce1-bf26-09b917f6c8ef",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "loanOfficers",
+					"id": "c4d8c0e7-dc9c-4e81-bd01-1f17fec20b42",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}}/she/api/v1/admin/users/loan/officer",
+							"host": [
+								"{{baseUrl}}}"
+							],
+							"path": [
+								"she",
+								"api",
+								"v1",
+								"admin",
+								"users",
+								"loan",
+								"officer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "seedFundOfficer",
+					"id": "e7f394d2-7171-4818-9089-5ae212380953",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}}/she/api/v1/admin/users/seed/officer",
+							"host": [
+								"{{baseUrl}}}"
+							],
+							"path": [
+								"she",
+								"api",
+								"v1",
+								"admin",
+								"users",
+								"seed",
+								"officer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "seedFundAdmin",
+					"id": "c40731ce-9975-4765-8bfe-e8b329527519",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}}/she/api/v1/admin/users/seed/admin",
+							"host": [
+								"{{baseUrl}}}"
+							],
+							"path": [
+								"she",
+								"api",
+								"v1",
+								"admin",
+								"users",
+								"seed",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forgotPassword",
+					"id": "b770fd15-547b-4b64-ba6a-f2af61516da8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/she/api/v1/user/auth/password/forgot/:mobile",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"she",
+								"api",
+								"v1",
+								"user",
+								"auth",
+								"password",
+								"forgot",
+								":mobile"
+							],
+							"variable": [
+								{
+									"key": "mobile",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "e52da790-c173-4465-8755-c9e0c49f1d90"
+		},
+		{
+			"name": "seed",
+			"item": [
+				{
+					"name": "allSeedFundApplications",
+					"id": "47316a8e-cf64-405c-8d03-78bffaa99ce0",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/she/api/v1/seed/all",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"she",
+								"api",
+								"v1",
+								"seed",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "approveSeedFundApplication",
+					"id": "47d5648e-137b-4404-ab39-2362a3e9b95b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/she/api/v1/seed/approve/:seedId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"she",
+								"api",
+								"v1",
+								"seed",
+								"approve",
+								":seedId"
+							],
+							"variable": [
+								{
+									"key": "seedId",
+									"value": "552e2b65-7ad1-4bd8-bc90-3db141527583"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "rejectSeedFundApplication",
+					"id": "61b0f3ce-d144-4558-a308-54760b45d0f1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/she/api/v1/seed/reject/:seedId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"she",
+								"api",
+								"v1",
+								"seed",
+								"reject",
+								":seedId"
+							],
+							"variable": [
+								{
+									"key": "seedId",
+									"value": "552e2b65-7ad1-4bd8-bc90-3db141527583"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "activateSeedFund",
+					"id": "f54ef960-211d-4dd0-a33e-5df3d76310ff",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{liveUrl}}/she/api/v1/seed/fund/activate/:seedId",
+							"host": [
+								"{{liveUrl}}"
+							],
+							"path": [
+								"she",
+								"api",
+								"v1",
+								"seed",
+								"fund",
+								"activate",
+								":seedId"
+							],
+							"variable": [
+								{
+									"key": "seedId",
+									"value": "2a8a3a76-708b-40c6-a141-a94da3239ab1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deactivateSeedFund",
+					"id": "59c315f1-9f83-4a7e-b595-a88b71df1946",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{liveUrl}}/she/api/v1/seed/fund/deactivate/:seedId",
+							"host": [
+								"{{liveUrl}}"
+							],
+							"path": [
+								"she",
+								"api",
+								"v1",
+								"seed",
+								"fund",
+								"deactivate",
+								":seedId"
+							],
+							"variable": [
+								{
+									"key": "seedId",
+									"value": "2a8a3a76-708b-40c6-a141-a94da3239ab1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "seedApplication",
+					"id": "a39dcf6f-3ab8-4fed-935e-978f378f49d5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/she/api/v1/seed/:seedId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"she",
+								"api",
+								"v1",
+								"seed",
+								":seedId"
+							],
+							"variable": [
+								{
+									"key": "seedId",
+									"value": "de603e53-3357-4085-a69c-50e162a3ca42"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addCommentSeedFund",
+					"id": "c9df6185-1067-4f5b-b914-4db9abfe4fe9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/she/api/v1/seed/officer/approve/:userId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"she",
+								"api",
+								"v1",
+								"seed",
+								"officer",
+								"approve",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "{{adminId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "01504d4a-254b-442d-bd52-9c9e66af5fda"
+		},
+		{
+			"name": "payment",
+			"item": [
+				{
+					"name": "callbackUrl",
+					"id": "37b51dc8-b8c0-4cc8-8f8e-df0511873c2a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/she/api/v1/loan/payment/reg/callback",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"she",
+								"api",
+								"v1",
+								"loan",
+								"payment",
+								"reg",
+								"callback"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "allPayments",
+					"id": "644eb41a-5b79-4309-ac60-6eb3a8af79a3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "payment",
+					"id": "2abf9f4a-0526-441f-ac19-9744cbf6afb9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{liveUrl}}/she/api/v1/seed/:userId",
+							"host": [
+								"{{liveUrl}}"
+							],
+							"path": [
+								"she",
+								"api",
+								"v1",
+								"seed",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "c9f4052c-3654-4434-a51a-cda548822250"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "38d589aa-0db1-4de0-bfe8-93e384dd33d6"
+		},
+		{
+			"name": "iq",
+			"item": [
+				{
+					"name": "all",
+					"id": "46098253-aae5-463e-b317-1bd366e2c8c2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/she/api/v1/iq/all",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"she",
+								"api",
+								"v1",
+								"iq",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "6769c929-e834-4399-83ba-0fa4443ed77d"
+		},
+		{
+			"name": "transaction",
+			"item": [
+				{
+					"name": "alltransactions",
+					"id": "591571c6-a439-4866-b8f4-01e4a6b3e69b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/she/api/v1/transaction/all",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"she",
+								"api",
+								"v1",
+								"transaction",
+								"all"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "87c26e1f-77c5-4dbc-bbcc-6285c3325a3f",
+							"name": "alltransactions",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://shebnks.com/she/api/v1/transaction/all",
+									"protocol": "https",
+									"host": [
+										"shebnks",
+										"com"
+									],
+									"path": [
+										"she",
+										"api",
+										"v1",
+										"transaction",
+										"all"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 06 Jun 2023 16:39:03 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.54 (Ubuntu)"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin,Access-Control-Request-Method,Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Data found\",\n    \"status\": \"OK\",\n    \"data\": {\n        \"transactions\": [\n            {\n                \"amount\": 1,\n                \"checkoutRequestID\": null,\n                \"id\": \"40a73dca-a766-48f9-ac06-9b9f1312f97e\",\n                \"merchantRequestID\": null,\n                \"user\": {\n                    \"name\": \"Peter Peter\",\n                    \"id\": \"20748a8a-590f-4190-b073-5cd334684117\"\n                },\n                \"createdOn\": \"06 June 2023\",\n                \"loanId\": \"fad0c5d9-fdf7-4fed-99aa-9b8d3026b85b\",\n                \"status\": \"PENDING\"\n            },\n            {\n                \"amount\": 1,\n                \"checkoutRequestID\": \"ws_CO_06062023193840597708835301\",\n                \"id\": \"7dab5cb2-3398-40fc-b2b1-0f758632472a\",\n                \"merchantRequestID\": \"44405-2562600-1\",\n                \"user\": {\n                    \"name\": \"Peter Peter\",\n                    \"id\": \"20748a8a-590f-4190-b073-5cd334684117\"\n                },\n                \"createdOn\": \"06 June 2023\",\n                \"loanId\": \"fad0c5d9-fdf7-4fed-99aa-9b8d3026b85b\",\n                \"status\": \"SUCCESS\"\n            },\n            {\n                \"amount\": 1,\n                \"checkoutRequestID\": null,\n                \"id\": \"9c96a5af-ae9e-4ed1-8194-d79b619c5608\",\n                \"merchantRequestID\": null,\n                \"user\": {\n                    \"name\": \"Peter Peter\",\n                    \"id\": \"20748a8a-590f-4190-b073-5cd334684117\"\n                },\n                \"createdOn\": \"06 June 2023\",\n                \"loanId\": \"fad0c5d9-fdf7-4fed-99aa-9b8d3026b85b\",\n                \"status\": \"PENDING\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				}
+			],
+			"id": "af53c8e2-824b-4bc9-b8bc-960391b584d4"
+		},
+		{
+			"name": "app",
+			"item": [],
+			"id": "6315cdfa-d81f-4ed6-bed7-cf220998d931"
+		},
+		{
+			"name": "callback",
+			"item": [
+				{
+					"name": "b2c",
+					"id": "90751233-d0c0-4820-9e49-3f25871684f0",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Result\": {\r\n        \"ConversationId\": \"AG_20230616_202044147c2e3f56c8ad\",\r\n        \"OriginatorConversationId\": \"23297-61366268-1\",\r\n        \"ResultDesc\": \"Service request is has bee accepted successfully\",\r\n        \"ResultType\": \"0\",\r\n         \"TransactionAmount\":\"100\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/she/api/v1/callback/b2c/result",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"she",
+								"api",
+								"v1",
+								"callback",
+								"b2c",
+								"result"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "588582f0-2efc-43dc-a79a-b6f71d661612"
+		},
+		{
+			"name": "login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "86a24565-ae4b-4074-8b54-1c2734482c6f",
+						"exec": [
+							"var res = pm.response.json();\r",
+							"pm.environment.set('adminToken', res.data.token);\r",
+							"pm.environment.set('adminId', res.data.user.userId);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "a1b7f289-9707-4e83-b269-56e8d5a8abd8",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"developers@dotconnectafrica.org\",\r\n    \"password\":\"LETTHESUN2023\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/she/api/v1/admin/auth/login",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"she",
+						"api",
+						"v1",
+						"admin",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "shutdown",
+			"id": "eccedd4c-283c-4cf7-9039-a3889da2c9e6",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{liveUrl}}/actuator/shutdown",
+					"host": [
+						"{{liveUrl}}"
+					],
+					"path": [
+						"actuator",
+						"shutdown"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{adminToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "f68e762e-8df4-429d-93eb-74368c6474bc",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "5573db7a-4d8c-47b6-b9c0-1aea9ef1d0ca",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

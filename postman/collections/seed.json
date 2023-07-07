@@ -1,0 +1,114 @@
+{
+	"info": {
+		"_postman_id": "de2bf5b3-a512-4c85-a5c8-63be87ca0b2a",
+		"name": "seed",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "7701706-de2bf5b3-a512-4c85-a5c8-63be87ca0b2a"
+	},
+	"item": [
+		{
+			"name": "create",
+			"id": "cde0068d-332c-485e-af4c-aa2a3e39174e",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"name\":\"one\",\r\n   \"about\":\"one\",\r\n   \"statements\":\"four\",\r\n   \"problems\":\"three\",\r\n   \"solution\":\"one\",\r\n   \"founders\":[\r\n      \"two\"\r\n    ],\r\n   \"number\":\"three\",\r\n   \"womanOwned\":true,\r\n   \"sectors\":[\r\n      \"test\",\r\n      \"Education\",\r\n      \"Building and Construction\"\r\n   ],\r\n   \"growthLevel\":\"test\",\r\n   \"primaryTarget\":[\r\n      \"tedt\",\r\n      \"No poverty\",\r\n      \"Zero Hunger\"\r\n   ],\r\n   \"incomeGeneration\":\"test\",\r\n   \"provenTransaction\":\"Test\",\r\n   \"stemInitiative\":\"Text\",\r\n   \"bridging\":\"Yes\",\r\n   \"income\":\"test\",\r\n   \"fundraised\":true,\r\n   \"scalingGoals\":\"test\",\r\n   \"otherInfo\":\"test\",\r\n   \"marketing\":\"TestTeam\",\r\n   \"reason\":\"Many\",\r\n   \"impact\":\"Test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/she/api/v1/seed/create/:userId",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"she",
+						"api",
+						"v1",
+						"seed",
+						"create",
+						":userId"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "{{userId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "seed",
+			"id": "b3120e21-4499-4ae1-981a-dc247a19ff09",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/she/api/v1/seed/:userId",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"she",
+						"api",
+						"v1",
+						"seed",
+						":userId"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "{{userId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "56c4b76e-085f-4eab-a3c0-05fb67b48da9",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "d358a8d7-eff1-41f3-b6b8-71f8eae8f6fa",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

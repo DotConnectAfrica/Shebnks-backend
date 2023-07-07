@@ -1,0 +1,118 @@
+{
+	"info": {
+		"_postman_id": "bda94950-8c8f-4fd8-84d3-1f700e9ffd78",
+		"name": "payment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "7701706-bda94950-8c8f-4fd8-84d3-1f700e9ffd78"
+	},
+	"item": [
+		{
+			"name": "customerToBusiness",
+			"id": "c2bfd09a-1c46-4696-8a84-5cec8c149fb3",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"mobile\":\"254708835301\",\r\n    \"amount\":\"1\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/she/api/v1/loan/payment/ctb/:loanId",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"she",
+						"api",
+						"v1",
+						"loan",
+						"payment",
+						"ctb",
+						":loanId"
+					],
+					"variable": [
+						{
+							"key": "loanId",
+							"value": "{{loanId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "callback",
+			"id": "2cfa486c-1b0d-4d45-adae-aa9e5b92caa4",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"Body\":{\r\n      \"stkCallback\":{\r\n         \"MerchantRequestID\":\"12145-58363579-2\",\r\n         \"CheckoutRequestID\":\"ws_CO_27052023113300577708835301\",\r\n         \"ResultCode\":\"0\",\r\n         \"ResultDesc\":\"The service request is processed successfully.\",\r\n         \"TinyPesaID\":\"a7b9b110-c6e0-11ed-87e9-890db35f5e04\",\r\n         \"CallbackMetadata\":{\r\n            \"Item\":[\r\n               {\r\n                  \"Name\":\"Amount\",\r\n                  \"Value\":\"1000\"\r\n               },\r\n               {\r\n                  \"Name\":\"MpesaReceiptNumber\",\r\n                  \"Value\":\"RCK97OOGTJ\"\r\n               },\r\n               {\r\n                  \"Name\":\"Balance\",\r\n                  \"Value\":null\r\n               },\r\n               {\r\n                  \"Name\":\"TransactionDate\",\r\n                  \"Value\":\"20230320083301\"\r\n               },\r\n               {\r\n                  \"Name\":\"PhoneNumber\",\r\n                  \"Value\":\"254728815101\"\r\n               }\r\n            ]\r\n         }\r\n      }\r\n   }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/she/api/v1/callback/c2b",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"she",
+						"api",
+						"v1",
+						"callback",
+						"c2b"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "a9c1255b-7e7d-410e-b49e-0e8f98ea47fa",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "5ecf9cca-265f-48ee-84a1-dd6def49819a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

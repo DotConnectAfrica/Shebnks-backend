@@ -1,0 +1,83 @@
+{
+	"info": {
+		"_postman_id": "b9d60c72-e7c3-4ff3-8d0f-6638cef347e8",
+		"name": "survey",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "7701706-b9d60c72-e7c3-4ff3-8d0f-6638cef347e8"
+	},
+	"item": [
+		{
+			"name": "create",
+			"id": "8fcf5dc5-154a-4731-b186-3c0cbc3767d0",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"quiz\":{\r\n   \"loanNumber\":2,\r\n   \"loanPurpose\":[\"Hello\",\"Many\"],\r\n   \"whereTaken\":[\"Hello\",\"Many\"],\r\n   \"longAgoTaken\":3,\r\n   \"whoTookLoan\":\"mom\",\r\n   \"bankAccount\":\"Yes\",\r\n   \"card\":\"Yes\",\r\n   \"insurance\":\"Yes\",\r\n   \"business\":\"Yes\",\r\n   \"typeOfBusiness\":[\"Restart of business after dormancy of over 2 years\"],\r\n   \"businessDuration\":3,\r\n   \"industry\":[\"NA\"],\r\n   \"businessTypeOfLoan\":[\"Overdraft\"],\r\n   \"collateralType\":[\"Land\" ,\"buildings under ownership by the business\"]\r\n}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/she/api/v1/iq/create/:userId",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"she",
+						"api",
+						"v1",
+						"iq",
+						"create",
+						":userId"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "{{userId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "6ab81a93-8762-420c-95b4-3b66a765459c",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "292ae0a4-48f6-423c-9079-374679980e61",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

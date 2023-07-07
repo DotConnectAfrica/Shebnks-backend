@@ -1,0 +1,165 @@
+{
+	"info": {
+		"_postman_id": "abaebfb4-c985-49f7-828f-f40a6e7172df",
+		"name": "Loans",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "7701706-abaebfb4-c985-49f7-828f-f40a6e7172df"
+	},
+	"item": [
+		{
+			"name": "requestLoan",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7e3f591f-0295-4dc6-b4da-25e72c775541",
+						"exec": [
+							"var res = pm.response.json();\r",
+							"pm.environment.set('loanId', res.data.loan.id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "d8f95377-c4af-44d2-a125-84b821cbf2b0",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amount\":1000.0,\r\n    \"survey\":{\r\n        \"womanOwned\":\"yes\",\r\n        \"howLong\":\"4 years\",\r\n        \"legal\":\"true\",\r\n        \"industry\":[\"Housing\",\"Marketing\"],\r\n        \"loanPurpose\":\"Any\",\r\n        \"loanUse\":\"Any\",\r\n        \"estTime\":\"10yrs\",\r\n        \"businessOverview\":\"Any\",\r\n        \"annualRevenue\":\"200000\",\r\n        \"existingLoans\":\"none\",\r\n        \"collateral\":\"Any\",\r\n        \"previouslyApplied\":\"Any\",\r\n        \"statement\":\"Any\",\r\n        \"employeeNo\":\"Any\",\r\n        \"financialChallenges\":\"Any\",\r\n        \"bPlan\":\"Any\",\r\n        \"competitor\":\"Any\",\r\n        \"women\":\"Any\",\r\n        \"marketing\":\"Any\",\r\n        \"reliability\":\"Any\",\r\n        \"training\":\"Any\",\r\n        \"mentor\":\"Any\",\r\n        \"otherInfo\":\"Any\"\r\n    }\r\n}\r\n\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{liveUrl}}/she/api/v1/loan/request/:userId",
+					"host": [
+						"{{liveUrl}}"
+					],
+					"path": [
+						"she",
+						"api",
+						"v1",
+						"loan",
+						"request",
+						":userId"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "{{userId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "appliedLoans",
+			"id": "f3af80cc-e543-44fa-83ac-e22cc2c01de2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{liveUrl}}/she/api/v1/loan/all/:userId",
+					"host": [
+						"{{liveUrl}}"
+					],
+					"path": [
+						"she",
+						"api",
+						"v1",
+						"loan",
+						"all",
+						":userId"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "{{userId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "testCallbackUrl",
+			"id": "f04fd304-7f36-4c0d-8c97-24e7fc1b86c4",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"Body\":{\r\n      \"stkCallback\":{\r\n         \"MerchantRequestID\":\"120319-106106728-1\",\r\n         \"CheckoutRequestID\":\"ws_CO_08062023093303461708835301\",\r\n         \"ResultCode\":\"0\",\r\n         \"ResultDesc\":\"The service request is processed successfully.\",\r\n         \"TinyPesaID\":\"a7b9b110-c6e0-11ed-87e9-890db35f5e04\",\r\n         \"CallbackMetadata\":{\r\n            \"Item\":[\r\n               {\r\n                  \"Name\":\"Amount\",\r\n                  \"Value\":\"1\"\r\n               },\r\n               {\r\n                  \"Name\":\"MpesaReceiptNumber\",\r\n                  \"Value\":\"RCK97OOGTJ\"\r\n               },\r\n               {\r\n                  \"Name\":\"Balance\",\r\n                  \"Value\":null\r\n               },\r\n               {\r\n                  \"Name\":\"TransactionDate\",\r\n                  \"Value\":\"20230320083301\"\r\n               },\r\n               {\r\n                  \"Name\":\"PhoneNumber\",\r\n                  \"Value\":\"254728815101\"\r\n               }\r\n            ]\r\n         }\r\n      }\r\n   }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/she/api/v1/callback/c2b",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"she",
+						"api",
+						"v1",
+						"callback",
+						"c2b"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "1a557fac-f407-4991-bb76-07c065cabdee",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "368ecb83-4b91-413c-87dd-73a79845d0d2",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

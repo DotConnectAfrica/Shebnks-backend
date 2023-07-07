@@ -28,7 +28,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/she/api/v1/user/profile/update/{userId}",
+							"raw": "{{baseUrl}}/she/api/v1/user/profile/update/:userId",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -39,14 +39,74 @@
 								"user",
 								"profile",
 								"update",
-								"{userId}"
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": null
+								}
 							]
 						}
 					},
 					"response": []
 				}
 			],
-			"id": "2c8754e1-0bdd-4aa3-a6cd-21acdd3e159e"
+			"id": "2c8754e1-0bdd-4aa3-a6cd-21acdd3e159e",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "54210b25-ac38-41ae-b31b-0a3d707a038d",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "68f50122-5b0c-4ebc-a5f4-eff0a9bb5b28",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIwNzA4ODM1MzAxIiwiaWF0IjoxNjgxOTEwNzk4LCJleHAiOjE2ODE5MTIyMzh9.1W8XQeoE3gjLlUa-j1iM_bo1wsh-NtgnQ1XfkHujS3E",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "86b6e3e4-5984-4369-9d1d-9049d14960e9",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "b4faeb40-63d3-43ee-bd00-0fbbc32f3de0",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
 		}
 	]
 }
